@@ -1,0 +1,33 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: test
+  title: Test
+  description: Test
+  tags:
+    - orchestrator
+    - built-in
+  links: []
+spec:
+  owner: janus-orchestrator
+  type: test
+
+  parameters: []
+  steps:
+    - id: log
+      name: log
+      action: debug:log
+      input:
+        message: "here it is ${POSTGRESQL_ADMIN_PASSWORD}"
+    - id: log
+      name: log
+      action: debug:log
+      input:
+        message: "here it is ${{ POSTGRESQL_ADMIN_PASSWORD }}"
+    - id: log
+      name: log
+      action: debug:log
+      input:
+        message: "here it is ${{ env.POSTGRESQL_ADMIN_PASSWORD }}"
+  output: {}
+
