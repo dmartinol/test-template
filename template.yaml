@@ -29,5 +29,10 @@ spec:
       action: debug:log
       input:
         message: "here it is ${{ env.POSTGRESQL_ADMIN_PASSWORD }}"
+    - id: log
+      name: log
+      action: debug:log
+      input:
+        message: "here it is ${{ process.env.POSTGRESQL_ADMIN_PASSWORD }}"
   output: {}
 
